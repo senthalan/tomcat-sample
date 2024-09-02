@@ -10,6 +10,7 @@ FROM tomcat:jre17
 WORKDIR /tomcat-sample
 
 COPY --from=0 /tomcat-sample/target/my-webapp /usr/local/tomcat/webapps/my-webapp/
+COPY --from=0 /tomcat-sample/logging.properties /usr/local/tomcat/conf/logging.properties
 
 RUN ls -la /usr/local/tomcat/webapps/
 
